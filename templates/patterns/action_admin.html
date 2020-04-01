@@ -1,0 +1,44 @@
+<!--#
+ @version 0.1 (auto-set)
+#-->
+
+[#if VIEW_MODE=="search_patterns" || VIEW_MODE==""#]
+ <ul class="nav nav-tabs">
+  <li [#if DATA_SOURCE=="patterns" || DATA_SOURCE==""#]class="active"[#endif#]><a href="?data_source=patterns"><#LANG_MODULE_PATTERNS#></a></li>
+  <li [#if DATA_SOURCE=="categories"#]class="active"[#endif#]><a href="?data_source=categories"><#LANG_CATEGORIES#></a></li>
+ </ul>
+[#endif VIEW_MODE#]
+
+
+[#if DATA_SOURCE=="" || DATA_SOURCE=="patterns"#]
+ <!-- action usual -->
+ <!-- table patterns search -->
+ [#if VIEW_MODE=="search_patterns" || VIEW_MODE==""#]
+  [#inc patterns_search_admin.html#]
+ [#endif VIEW_MODE#]
+ <!-- / table patterns search -->
+ <!-- table patterns edit -->
+ [#if VIEW_MODE=="edit_patterns"#]
+   [#inc patterns_edit.html#]
+ [#endif VIEW_MODE#]
+ <!-- / table patterns edit -->
+ <!-- table patterns view --> 
+ [#if VIEW_MODE=="view_patterns"#]
+   [#inc patterns_view.html#]
+ [#endif VIEW_MODE#]
+ <!-- / table patterns view -->
+[#endif DATA_SOURCE#]
+
+[#if DATA_SOURCE=="categories"#]
+ <!-- action usual -->
+ <!-- table scripts search -->
+ [#if VIEW_MODE=="search_categories" || VIEW_MODE==""#]
+  [#inc categories_search_admin.html#]
+ [#endif VIEW_MODE#]
+ <!-- / table scripts search -->
+ <!-- table scripts edit -->
+ [#if VIEW_MODE=="edit_categories"#]
+   [#inc categories_edit.html#]
+ [#endif VIEW_MODE#]
+ <!-- / table scripts edit -->
+[#endif DATA_SOURCE#]
