@@ -963,6 +963,8 @@ class patterns extends module
 
  pattern_categories: ID int(10) unsigned NOT NULL auto_increment
  pattern_categories: TITLE varchar(255) NOT NULL DEFAULT ''
+ pattern_categories: ROW_COLOR varchar(15) NOT NULL DEFAULT ''
+ 
 
 EOD;
         parent::dbInstall($data);
